@@ -31,6 +31,24 @@ if __name__ == '__main__':
     schools = pd.merge(demographics, location, left_on='DBN',
         right_on='ATS SYSTEM CODE')
 
+    schools = schools[(schools['Num of SAT Test Takers'] != 's')]
+    schools['SAT Critical Reading Avg. Score'] = pd.to_numeric(schools['SAT Critical Reading Avg. Score'])
+    schools['SAT Math Avg. Score'] = pd.to_numeric(schools['SAT Math Avg. Score'])
+    schools['SAT Writing Avg. Score'] = pd.to_numeric(schools['SAT Writing Avg. Score'])
+
+    schools['total'] = schools['SAT Critical Reading Avg. Score'] + schools['SAT Math Avg. Score'] + schools['SAT Writing Avg. Score']
+
+    schools['grade9'] = schools['grade9'].str.replace(' ', '')
+    schools['grade10'] = schools['grade10'].str.replace(' ', '')
+    schools['grade11'] = schools['grade11'].str.replace(' ', '')
+    schools['grade12'] = schools['grade12'].str.replace(' ', '')
+    schools['grade9'] = pd.to_numeric(schools['grade9'])
+    schools['grade10'] = pd.to_numeric(schools['grade10'])
+    schools['grade11'] = pd.to_numeric(schools['grade11'])
+    schools['grade12'] = pd.to_numeric(schools['grade12'])
+
+    schools['enrollment'] = schools['grade9'] + schools['grade10'] + schools['grade11'] + schools['grade12']
+
     csv_trees = 'trees2015.csv'
     trees = pd.read_csv(csv_trees, usecols=['tree_id', 'status', 'address',
         'postcode', 'community board', 'borough', 'cncldist', 'nta', 'nta_name',
