@@ -1,1 +1,9 @@
 # technica19
+
+Last spring, in a psychology class called "Mind", I had a professor lecture about Environmental Neuroscience. She talked about effects an individual's environment can have on behavior and health, and one of the most striking examples she presented was a study on Public Housing in Chicago. In their research, Taylor, Kuo and Sullivan (2001)("http://lhhl.illinois.edu/all.scientific.articles.htm") studied views from windows in Robert Taylor Public Housing and classified them as either having good or poor nature views. They found that better nature views correlated with better memory, attention, and self-discipline in the children who lived in the Public Housing.
+
+While looking though Open Source Data to see what kinds of data might be interesting to play with, I came across the NYC 2015 Tree Census Data. This dataset lists over 683k trees and their precise location. Coupled with education data that NYC has, I thought this could potentially be an interesting use case to see how alternative data could be applied in new way to reframe and rethink about problem spaces.
+
+Going into the project, I didn't expect to find high correlation between the two, but education outcomes is a complex area, and the possibility of figuring out new connections in the world drove me to try something ~ creative ~ . I did not find any statistically significant relationships between trees in NYC and high school outcomes, and I now realized that even though I did include several other predictors into my model there are many, many, many predictors. It was fun to think of an interesting (although perhaps a little too outside the box) hypothesis, and go through the data to see if it could in fact be valid. 
+
+I had a good time working with the data -- cleaning, analyzing, visualizing -- regardless of not having come up with anything particularly insightful !
